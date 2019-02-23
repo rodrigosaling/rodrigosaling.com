@@ -28,12 +28,14 @@
     "lodash": "^4.17.4",
     "moment": "^2.23.0",
     "prismjs": "^1.15.0",
+    "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-share": "^2.4.0",
     "react-twitter-widgets": "^1.7.1",
+    "sanitize.css": "^8.0.0",
     "url-join": "^4.0.0"
   },
   "devDependencies": {

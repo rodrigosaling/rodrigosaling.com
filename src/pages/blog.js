@@ -1,15 +1,52 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../layout";
+import PostListing from "../components/PostListing/PostListing";
+import SEO from "../components/SEO/SEO";
+import config from "../../data/SiteConfig";
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+class Index extends React.Component {
+  render() {
+    const postEdges = this.props.data.allMarkdownRemark.edges;
+    return (
+      <Layout>
+        <div className="index-container">
+          <Helmet title={config.siteTitle} />
+          <SEO />
+          <PostListing postEdges={postEdges} />
+        </div>
+      </Layout>
+    );
+  }
+}
 
-const Blog = () => (
-  <Layout>
-    <SEO title="Blog" />
-    <h1>Blog</h1>
-    <Link to={'/blog/pelvis-o-desiludido'}>Pélvis, O Desiludido</Link>
-  </Layout>
-);
+export default Index;
 
-export default Blog;
+/* eslint no-undef: "off" */
+export const pageQuery = graphql`
+  query IndexQuery {
+    allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [fields___date], order: DESC }
+      filter: { fields: { sourceInstanceName: { eq: "blog" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            cover
+            date
+          }
+        }
+      }
+    }
+  }
+`;
