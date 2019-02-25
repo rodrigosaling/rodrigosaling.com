@@ -14,10 +14,10 @@ const Header = ({ siteTitle }) => (
         <div className="site-nav-right">
           <ul className="nav" role="menu">
             <li className="nav-about-me nav-current" role="menuitem">
-              <Link to="/about-me">About me</Link>
+              <Link to="/sobre-mim">Sobre mim</Link>
             </li>
-            <li className="nav-projects" role="menuitem">
-              <Link to="/projects">Projects</Link>
+            <li className="nav-projetos" role="menuitem">
+              <Link to="/projetos">Projetos</Link>
             </li>
             <li className="nav-blog" role="menuitem">
               <Link to="/blog">Blog</Link>
@@ -34,7 +34,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  siteTitle: ``
+  siteTitle: 'Rodrigo Saling'
 };
 
 export default Header;
