@@ -1,40 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Components
 import { Link, graphql } from 'gatsby';
-import Layout from './blogTemplate';
+import Layout from '../components/layout';
 
-const Tags = ({ pageContext, data }) => {
+const TagsTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } tagged with "${tag}"`;
+  } marcados com "${tag}"`;
 
   return (
     <Layout>
       <h1>{tagHeader}</h1>
-      <ul>
+      <Link to="/tags/">Ver todas as tags</Link>
+      <div className="post-feed">
         {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter;
+          const { path, title, date } = node.frontmatter;
           return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
+            <article key={path} className={'post-card'}>
+              <h2>
+                <Link to={path}>
+                  {title}
+                </Link>
+              </h2>
+              <small>{date}</small>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.excerpt,
+                }}
+              />
+            </article>
           );
         })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
+      </div>
     </Layout>
   );
 };
 
-Tags.propTypes = {
+TagsTemplate.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired
   }),
@@ -55,21 +60,23 @@ Tags.propTypes = {
   })
 };
 
-export default Tags;
+export default TagsTemplate;
 
 export const tagsPageQuery = graphql`
-  query($tag: String) {
+  query SingleTagQuery($tag: String) {
     allMarkdownRemark(
-      limit: 2000
+      limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {
         node {
+          excerpt
           frontmatter {
             title
             path
+            date(formatString: "DD MMMM YYYY", locale: "pt-br")
           }
         }
       }

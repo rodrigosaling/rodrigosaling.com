@@ -1,8 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
 import Layout from '../components/layout';
 
-export default function Template({
+export default function BlogTemplate({
   data // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
@@ -16,20 +17,28 @@ export default function Template({
         dangerouslySetInnerHTML={{ __html: html }}
       />
       <p>
-        {frontmatter.tags}
+        Tags:
+        {frontmatter.tags.map(tag => (
+          <span key={tag}>
+            {' '}
+            <Link to={`/tags/${kebabCase(tag)}/`}>
+              {tag}
+            </Link>
+          </span>
+        ))}
       </p>
     </Layout>
   );
 }
 
 export const blogPageQuery = graphql`
-  query ($path: String!) {
+  query BlogPostQuery($path: String!) {
     markdownRemark(
       frontmatter: { path: { eq: $path } }
     ) {
       html
       frontmatter {
-        date(formatString: "DD MMMM YYYY")
+        date(formatString: "DD MMMM YYYY", locale: "pt-br")
         title
         tags
       }

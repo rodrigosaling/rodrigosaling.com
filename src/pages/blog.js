@@ -57,7 +57,7 @@ export const pageQuery = graphql`
         node {
           excerpt
           frontmatter {
-            date(formatString: "DD MMMM YYYY")
+            date(formatString: "DD MMMM YYYY", locale: "pt-br")
             title
             slug
             path
