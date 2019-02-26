@@ -20,7 +20,7 @@ class Blog extends Component {
             return (
               <article key={node.frontmatter.slug} className={'post-card'}>
                 <h2>
-                  <Link to={node.frontmatter.slug}>
+                  <Link to={node.frontmatter.path}>
                     {title}
                   </Link>
                 </h2>
@@ -57,9 +57,10 @@ export const pageQuery = graphql`
         node {
           excerpt
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             title
             slug
+            path
           }
         }
       }

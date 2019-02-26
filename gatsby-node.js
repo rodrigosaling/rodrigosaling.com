@@ -18,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
     {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { published: { eq: true } } }
         limit: 1000
       ) {
         edges {
@@ -38,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges;
 
     // Create post detail pages
-    posts.forEach(({ slug }) => {
+    posts.forEach(({node: { frontmatter: { slug }}}) => {
       createPage({
         path: `/blog/${slug}/`,
         component: blogPostTemplate
