@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Footer from '../components/footer';
+import Footer from './footer';
 
-import '../../node_modules/sanitize.css/sanitize.css';
-import './index.css';
+import 'sanitize.css';
+import './layout.css';
 
 const LayoutHome = ({ children }) => (
   <div className={'container'}>

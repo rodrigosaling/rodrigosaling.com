@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import LayoutHome from '../layout/layout-home';
+import LayoutHome from '../components/layout-home';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
