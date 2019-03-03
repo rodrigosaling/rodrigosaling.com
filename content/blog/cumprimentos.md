@@ -1,0 +1,87 @@
+---
+path: "/blog/cumprimentos/"
+slug: "cumprimentos"
+date: "2007-03-20"
+title: "Cumprimentos"
+category: "blog"
+tags: ['bobagem', 'listas', 'pt-br']
+published: true
+---
+
+Percebi que na volta às aulas, depois de quase 3 meses de férias com muita cerveja, eu não lembrava mais o nome dos meus colegas. Lembrava dos rostos, mas o nome… E a situação fica ainda mais incômoda quando um deles chega puxando papo e fala o teu nome, e tu ficas ali, tentando lembrar o nome da criatura e nenhum que vem à cabeça é o correto.
+
+Por esse motivo, vamos tentar criar uma técnica para enrolar, ou não, a conversa com qualquer pessoa que você conheça, até o nome do ser humano à sua frente ficar na ponta da sua língua.
+
+1.**Usando o lado emocional**. Vem aquela pessoa que tu gostas, por quem tu tens um carinho especial, é muito querida, mas, qual é o nome dela mesmo?
+
+— Oi Rodrigo! Tudo bem?
+
+— Oi… (o segundo cruel) *querida*! Comigo tudo, e contigo? — use palavras legais como *querida(o), amiga(o), gatinha(o), guri(a), muleque, parcero, teu, meu, faxa* e afins.
+
+Ou é aquela pessoa que você **não** gosta.
+
+— E aí Rodrigo? Beleza?
+
+— Tudo certo *seu mané. Já se f\*deu hoje*? — parta para a baixaria e se livre rapidamente da pessoa, enquanto os socos na cara não te deixam inconsciente no chão.
+
+2.**Usando relacionamentos com a família**. Mostra que você tem uma certa intimidade com a pessoa e a família dela.
+
+— Oi Rodrigo! Tudo bem?
+
+— Tudo bem comigo! E com… (rápida olhada para cima) a *filha mais querida do Seu João*?
+
+— Ele morreu ontem. —pode acontecer daquela pessoa que é a referência não existir mais.
+
+— … (agora olhe diretamente para cima, para o céu, junte a palma das mãos, se ajoelhe no chão e tente parecer o mais católico possível).
+
+3.**Usando movimentos bruscos com o corpo**. Mostre que você não tem problemas em se relacionar com pessoas do mesmo sexo e chegue junto.
+
+— E aí Rodrigo? Tudo em cima?
+
+— Vem aqui cara! *Humpfff*… (um abraço forte, de urso).
+
+— Tu tá loco meu? Vai si f\*dê seu b\*cha! — a pessoa vai rapidamente embora, mas os outros espectadores da cena podem ficar pensando coisas de você.
+
+4.**Usando o longo tempo que não se vêem ao seu favor**. Qualquer desculpa é válida.
+
+— E aí Rodrigo? Ainda se lembra de mim?
+
+— Não lembro. *Estou cego. Caiu ácido nos meus olhos*.
+
+— Você não deveria estar usando óculos escuros?
+
+— (pensa pensa pensa) *Foram roubados há pouco*, ainda não comprei novos.
+
+— E a tua bengala?
+
+— (mas que droga! pensa pensa pensa pensa) *Escorregou bueiro a dentro e não consegui mais pegar*.
+
+— Teus olhos me parecem normais. Que tipo de ácido foi esse?
+
+— (muita calma, não ponha tudo a perder, escolha um nome difícil) É *ácido acetilsalisílico*. Muito forte. Está destruindo as calotas polares.
+
+— Isso é **Aspirina** rapá! Tu tá me enganando safado?
+
+— … (caia no chão dizendo que a pessoa a sua frente está te batendo e espere que alguém te ampare. Ou espere que seu amigo comece a te bater mesmo).
+
+5.**Usando sua cara-de-pau**. Fique marcado para o resto do mês como aquela pessoa que passou por mim e fez que não me viu.
+
+— Oi Rodrigo! Tudo bem?
+
+— … (olhe para o outro lado, ponha as mãos em formato de concha nas orelhas, como se quisesse ouvir uma música mais atentamente e comece a dançar enquanto passa descontraidamente ao lado do seu amigo).
+
+6.**Usando a sua completa falta de neurônios**. É tipo aquela luta: vale-tudo.
+
+— Oi Rodrigo! Tudo bem?
+
+— *Aaaaaaaaa alienígena! Aaaaaaa…* (saia correndo para o lado contrário do seu amigo, em zigue-zague, tropeçando nas coisas e nas outras pessoas).
+
+7.**Usando a verdade**. Deixei por último porque é a maneira mais ineficaz, mais chata e mais difícil.
+
+— Oi Rodrigo! Tudo bem?
+
+— *Mil desculpas, mas não recordo o teu nome. Qual é mesmo?*
+
+— Nunca mais fala comigo seu ingrato!
+
+Pois é, a verdade às vezes é cruel.
