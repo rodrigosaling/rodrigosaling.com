@@ -1,49 +1,66 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
-import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
+import React, { Component } from 'react';
+import { graphql, Link } from 'gatsby';
 
-class Index extends React.Component {
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+
+class Blog extends Component {
   render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
+
     return (
       <Layout>
-        <div className="index-container">
-          <Helmet title={config.siteTitle} />
-          <SEO />
-          <PostListing postEdges={postEdges} />
+        <SEO title="Blog" />
+        <h1>Blog</h1>
+        <div className="post-feed">
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.frontmatter.slug;
+            return (
+              <article key={node.frontmatter.slug} className={'post-card'}>
+                <h2>
+                  <Link to={node.frontmatter.path}>
+                    {title}
+                  </Link>
+                </h2>
+                <small>{node.frontmatter.date}</small>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.excerpt,
+                  }}
+                />
+              </article>
+            )
+          })}
         </div>
       </Layout>
     );
   }
 }
 
-export default Index;
+export default Blog;
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query IndexQuery {
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { fields: { sourceInstanceName: { eq: "blog" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { eq: "blog" }, published: { ne: false } } }
     ) {
       edges {
         node {
-          fields {
-            slug
-            date
-          }
           excerpt
-          timeToRead
           frontmatter {
+            date(formatString: "DD MMMM YYYY", locale: "pt-br")
             title
-            tags
-            cover
-            date
+            slug
+            path
           }
         }
       }

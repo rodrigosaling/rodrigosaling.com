@@ -6,13 +6,25 @@ import SEO from '../components/seo';
 
 const IndexPage = () => (
   <LayoutHome>
-    <SEO title="Home" keywords={[`rodrigo`, `saling`, `blog`, 'projects', 'developer']} />
-    <h1 id="hello">Hello!</h1>
-    <p>My name is Rodrigo Saling and I am a front-end web developer living in Porto Alegre, Brazil.</p>
-    <p>You can find the links to my my profiles across the www by going to the <a href="/about-me">About Me</a> page. You can also find the links to my Spotify playlists there.</p>
-    <p>You can also check my <a href="/projects">personal projects</a>.</p>
-    <p>But if you are here for the nonsense stuff, you can check my <a href="/blog">blog</a>.</p>
-    <p>Have a nice day!</p>
+    <SEO title="Inicial" />
+    <h1>Olá!</h1>
+    <p>
+      Meu nome é Rodrigo Saling, sou desenvolvedor front-end e moro em Porto
+      Alegre, Brasil.
+    </p>
+    <p>
+      No futuro você poderá me conhecer melhor e ver meus perfis espalhados
+      pela internet accessando a página <Link to="/sobre-mim/">Sobre mim</Link>.
+      Um dia vou colocar os links para as minhas playlists do Spotify lá.
+    </p>
+    <p>
+      Você também pode ver meus <Link to="/projetos/">projetos pessoais</Link>.
+    </p>
+    <p>
+      Mas se você está aqui pela bobajada, acesse o meu{' '}
+      <Link to="/blog/">blog</Link>.
+    </p>
+    <p>Tenha um ótimo dia!</p>
   </LayoutHome>
 );
 
