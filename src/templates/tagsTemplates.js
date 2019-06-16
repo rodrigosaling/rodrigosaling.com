@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const TagsTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } marcados com "${tag}"`;
+  } marcados com a tag '${tag}'`;
 
   return (
     <Layout>
+      <SEO title={`Tag: ${tag}`} />
       <h1>{tagHeader}</h1>
       <Link to="/tags/">Ver todas as tags</Link>
       <div className="post-feed">
