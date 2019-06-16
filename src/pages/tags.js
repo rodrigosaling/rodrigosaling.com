@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 
 // Components
-import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const TagsPage = ({
   data: {
@@ -18,9 +18,9 @@ const TagsPage = ({
   }
 }) => (
   <Layout>
-    <Helmet title={title} />
+    <SEO title="Todas as tags" />
     <div>
-      <h1>Tags</h1>
+      <h1>Todas as tags</h1>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
