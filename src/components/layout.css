@@ -31,6 +31,15 @@ h1 {
   line-height: 1;
 }
 
+pre, code {
+  background-color: #ddd;
+  padding: 10px;
+}
+
+code {
+  padding: 0 4px;
+}
+
 .container {
   margin: 0 auto;
   max-width: 900px;
