@@ -45,14 +45,14 @@ funcionou para mim. Eu tive que criar mais dois arquivos e botar a configuraçã
 4. Criar dois novos arquivos no mesmo local do `.gitconfig`, com os nomes definidos acima, novamente
 no meu caso `.gitconfig-trabalho` e `.gitconfig-pessoal`. O conteúdo deles, respectivamente:
 
-    ```text
+    ```
     [user]
         email = seuemaildetrabalho@meuemprego.com
     [core]
         sshCommand = "ssh -i ~/.ssh/id_rsa_trabalho"
     ```
    
-    ```text
+    ```
     [user]
         email = seuemailpessoal@algumacoisa.com
     [core]
@@ -65,7 +65,7 @@ no meu caso `.gitconfig-trabalho` e `.gitconfig-pessoal`. O conteúdo deles, res
 email e arquivos corretos. Mas eles precisam de uma configuração importante: a URL do `origin` 
 precisa estar configurada com `git@github.com` ao invés do `https`:
 
-    ```text
+    ```
     [remote "origin"]
         url = git@github.com:rodrigosaling/rodrigosaling.com.git
     ```
@@ -76,7 +76,7 @@ precisa estar configurada com `git@github.com` ao invés do `https`:
 e rode `git config --list`. Se tudo estiver certinho, ele vai exibir os dados corretos após o `include`,
 que ele usou, mais ou menos assim:
 
-    ```text
+    ```
     includeif.gitdir:~/diretorio/do/trabalho/.path=./.gitconfig-trabalho
     includeif.gitdir:~/diretorio/pessoal/.path=./.gitconfig-pessoal
     user.email=seuemailpessoal@algumacoisa.com
