@@ -11,7 +11,7 @@ published: true
 Nós temos esse sistema na HealthPlan Services, que é chamado de VPMi.
 Toda sexta-feira temos que digitar as horas que trabalhamos durante a 
 semana e enviar. Só que não sabemos o que as letras V, P, M e I 
-significam, então decide bolar algumas ideias em português e inglẽs.
+significam, então decidimos bolar algumas ideias em português e inglês.
 
 Português:
 
