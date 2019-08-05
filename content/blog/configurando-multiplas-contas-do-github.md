@@ -72,6 +72,17 @@ precisa estar configurada com `git@github.com` ao invés do `https`:
 
     Quando você clona um repositório, o GitHub já te dá essa opção.
     
+6. Para testar se as configurações estão funcionando, acesse os diretórios de diferentes repositórios
+e rode `git config --list`. Se tudo estiver certinho, ele vai exibir os dados corretos após o `include`,
+que ele usou, mais ou menos assim:
+
+    ```text
+    includeif.gitdir:~/diretorio/do/trabalho/.path=./.gitconfig-trabalho
+    includeif.gitdir:~/diretorio/pessoal/.path=./.gitconfig-pessoal
+    user.email=seuemailpessoal@algumacoisa.com
+    core.sshcommand=ssh -i ~/.ssh/id_rsa_pessoal
+
+    ```
 E era isso!
 
 ## Referências
