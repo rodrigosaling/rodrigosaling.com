@@ -13,9 +13,9 @@ const IndexPage = () => (
       Alegre, Brasil.
     </p>
     <p>
-      No futuro você poderá me conhecer melhor e ver meus perfis espalhados
-      pela internet accessando a página <Link to="/sobre-mim/">Sobre mim</Link>.
-      Um dia vou colocar os links para as minhas playlists do Spotify lá.
+      No futuro você poderá me conhecer melhor e ver meus perfis espalhados pela
+      internet accessando a página <Link to="/sobre-mim/">Sobre mim</Link>. Um
+      dia vou colocar os links para as minhas playlists do Spotify lá.
     </p>
     <p>
       Você também pode ver meus <Link to="/projetos/">projetos pessoais</Link>.

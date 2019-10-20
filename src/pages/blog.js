@@ -20,18 +20,16 @@ class Blog extends Component {
             return (
               <article key={node.frontmatter.slug} className={'post-card'}>
                 <h2>
-                  <Link to={node.frontmatter.path}>
-                    {title}
-                  </Link>
+                  <Link to={node.frontmatter.path}>{title}</Link>
                 </h2>
                 <small>{node.frontmatter.date}</small>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: node.excerpt,
+                    __html: node.excerpt
                   }}
                 />
               </article>
-            )
+            );
           })}
         </div>
       </Layout>
@@ -51,7 +49,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { eq: "blog" }, published: { ne: false } } }
+      filter: {
+        frontmatter: { category: { eq: "blog" }, published: { ne: false } }
+      }
     ) {
       edges {
         node {

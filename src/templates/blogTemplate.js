@@ -23,9 +23,7 @@ export default function BlogTemplate({
         {frontmatter.tags.map(tag => (
           <span key={tag}>
             {' '}
-            <Link to={`/tags/${kebabCase(tag)}/`}>
-              {tag}
-            </Link>
+            <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
           </span>
         ))}
       </p>
@@ -35,9 +33,7 @@ export default function BlogTemplate({
 
 export const blogPageQuery = graphql`
   query BlogPostQuery($path: String!) {
-    markdownRemark(
-      frontmatter: { path: { eq: $path } }
-    ) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         date(formatString: "DD MMMM YYYY", locale: "pt-br")

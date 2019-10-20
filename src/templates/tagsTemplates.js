@@ -23,14 +23,12 @@ const TagsTemplate = ({ pageContext, data }) => {
           return (
             <article key={path} className={'post-card'}>
               <h2>
-                <Link to={path}>
-                  {title}
-                </Link>
+                <Link to={path}>{title}</Link>
               </h2>
               <small>{date}</small>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.excerpt,
+                  __html: node.excerpt
                 }}
               />
             </article>
