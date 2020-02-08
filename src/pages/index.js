@@ -14,11 +14,11 @@ const IndexPage = () => (
     </p>
     <p>
       No futuro você poderá me conhecer melhor e ver meus perfis espalhados pela
-      internet accessando a página <Link to="/sobre-mim/">Sobre mim</Link>. Um
-      dia vou colocar os links para as minhas playlists do Spotify lá.
+      internet accessando a página <Link to="/sobre-mim/">Sobre mim</Link>.
     </p>
     <p>
-      Você também pode ver meus <Link to="/projetos/">projetos pessoais</Link>.
+      Você também pode ver meus <Link to="/projetos/">projetos pessoais</Link>{' '}
+      (nenhum no momento).
     </p>
     <p>
       Mas se você está aqui pela bobajada, acesse o meu{' '}
