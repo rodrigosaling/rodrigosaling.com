@@ -14,7 +14,7 @@ const IndexPage = () => (
     </p>
     <p>
       No futuro você poderá me conhecer melhor e ver meus perfis espalhados pela
-      internet accessando a página <Link to="/sobre-mim/">Sobre mim</Link>.
+      internet acessando a página <Link to="/sobre-mim/">Sobre mim</Link>.
     </p>
     <p>
       Você também pode ver meus <Link to="/projetos/">projetos pessoais</Link>{' '}
