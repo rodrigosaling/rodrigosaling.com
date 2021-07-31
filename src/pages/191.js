@@ -1,11 +1,12 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import { graphql } from 'gatsby'
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const Numero191 = ({ data }) => (
   <Layout>
-    <SEO title="191" />
+    <Seo title="191" />
     <h1>191</h1>
     <p>
       Cento e noventa e um é o número da nossa ex-casa lá em Santa Rosa. Meus

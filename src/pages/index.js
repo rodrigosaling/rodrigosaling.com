@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Olá!" />
+    <Seo title="Olá!" />
     <h1>Olá!</h1>
     <p>
       Meu nome é Rodrigo Saling, sou desenvolvedor front-end e moro em Porto

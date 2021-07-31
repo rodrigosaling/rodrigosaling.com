@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const TagsTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -14,7 +14,7 @@ const TagsTemplate = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO title={`Tag: ${tag}`} />
+      <Seo title={`Tag: ${tag}`} />
       <h1>{tagHeader}</h1>
       <Link to="/tags/">Ver todas as tags</Link>
       <div className="post-feed">

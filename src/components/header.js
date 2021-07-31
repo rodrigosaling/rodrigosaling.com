@@ -12,17 +12,17 @@ const Header = ({ siteTitle }) => (
           </Link>
         </div>
         <div className="site-nav-right">
-          <ul className="nav" role="menu">
-            <li className="nav-about-me nav-current" role="menuitem">
+          <ul className="nav">
+            <li className="nav-about-me nav-current">
               <Link to="/sobre-mim/">Sobre mim</Link>
             </li>
-            <li className="nav-projetos" role="menuitem">
+            <li className="nav-projetos">
               <Link to="/projetos/">Projetos</Link>
             </li>
-            <li className="nav-blog" role="menuitem">
+            <li className="nav-blog">
               <Link to="/blog/">Blog</Link>
             </li>
-            <li className="nav-191" role="menuitem">
+            <li className="nav-191">
               <Link to="/191/">191</Link>
             </li>
           </ul>

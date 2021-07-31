@@ -7,7 +7,7 @@ import kebabCase from 'lodash/kebabCase';
 // Components
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const TagsPage = ({
   data: {
@@ -18,7 +18,7 @@ const TagsPage = ({
   }
 }) => (
   <Layout>
-    <SEO title="Todas as tags" />
+    <Seo title="Todas as tags" />
     <div>
       <h1>Todas as tags</h1>
       <ul>

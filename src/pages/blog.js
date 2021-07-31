@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 class Blog extends Component {
   render() {
@@ -12,7 +12,7 @@ class Blog extends Component {
 
     return (
       <Layout>
-        <SEO title="Blog" />
+        <Seo title="Blog" />
         <h1>Blog</h1>
         <div className="post-feed">
           {posts.map(({ node }) => {
