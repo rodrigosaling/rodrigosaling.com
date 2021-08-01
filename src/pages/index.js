@@ -7,7 +7,7 @@ import Seo from '../components/seo';
 const IndexPage = () => (
   <Layout>
     <Seo title="Olá!" />
-    <h1>Olá!</h1>
+    <h1 className="text-6xl">Olá!</h1>
     <p>
       Meu nome é Rodrigo Saling, sou desenvolvedor front-end e moro em Porto
       Alegre, Brasil.
