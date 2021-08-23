@@ -19,10 +19,12 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <div className={'container'}>
+    render={(data) => (
+      <div className="">
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
+        <div className="container mx-auto">
+          <main>{children}</main>
+        </div>
         <Footer />
       </div>
     )}
@@ -30,7 +32,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;
