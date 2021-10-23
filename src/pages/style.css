@@ -28,8 +28,3 @@ a {
 
 @tailwind utilities;
 
-
-/* BASE STYLES */
-html {
-  @apply bg-gray-100;
-}

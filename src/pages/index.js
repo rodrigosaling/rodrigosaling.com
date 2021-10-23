@@ -7,7 +7,7 @@ import './style.css';
 const IndexPage = () => {
   return (
     <div className="container p-5">
-      <Helmet>
+      <Helmet htmlAttributes={{ class: 'bg-gray-100' }}>
         <title>Rodrigo Saling</title>
       </Helmet>
       <header>
