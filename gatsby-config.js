@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.rodrigosaling.com',
-    title: 'rodrigosaling.com',
+    title: 'Rodrigo Saling',
     author: 'Rodrigo Saling',
   },
   plugins: [
