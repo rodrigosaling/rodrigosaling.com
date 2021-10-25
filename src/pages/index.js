@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 
 import './style.css';
 
-// markup
 const IndexPage = () => {
   return (
     <div className="container p-5">
@@ -11,20 +10,20 @@ const IndexPage = () => {
         <title>Rodrigo Saling</title>
       </Helmet>
       <header>
-        <h1 className="text-5xl">Rodrigo Saling</h1>
-        <p>Desenvolvedor Frontend</p>
+        <h1 className="text-5xl font-bold">Rodrigo Saling</h1>
+        <p className="mt-1">Desenvolvedor Frontend</p>
       </header>
       <hr className="my-3" />
       <main>
         <h2 className="text-3xl mb-4">
-          <span role="img" aria-label="Mão acenando como forma de cumprimento">
+          <span role="img" aria-label="Mão acenando como forma de boas-vindas">
             👋
           </span>{' '}
           Olá!
         </h2>
         <p>
-          O que você está vendo é o meu site pessoal. Ele que está em construção
-          desde o tempo do GeoCities.
+          Moro em Porto Alegre, trabalho na e-Core como dev frontend e
+          atualmente estou reformulando este site.
         </p>
       </main>
       <hr className="my-3" />
