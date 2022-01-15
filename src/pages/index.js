@@ -1,19 +1,10 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link as GatsbyLink } from 'gatsby';
 
 import './style.css';
+import Link from '../components/link';
 
-const Link = ({ children, ...props }) => (
-  <GatsbyLink
-    className="text-sky-600 underline hover:text-sky-400 visited:text-violet-800"
-    {...props}
-  >
-    {children}
-  </GatsbyLink>
-);
-
-const IndexPage = () => {
+function IndexPage() {
   return (
     <div className="">
       <Helmet
@@ -81,6 +72,6 @@ const IndexPage = () => {
       </footer>
     </div>
   );
-};
+}
 
 export default IndexPage;
