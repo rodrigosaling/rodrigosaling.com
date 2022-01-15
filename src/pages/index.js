@@ -24,12 +24,12 @@ const IndexPage = () => {
 
       <header>
         <h1 className="font-bold">Rodrigo Saling</h1>
-        {/* <nav className="mt-5">
+        <nav className="mt-5">
           <ul className="flex gap-4">
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/about-me">About me</Link>
             </li>
             <li>
@@ -40,12 +40,12 @@ const IndexPage = () => {
             </li>
             <li>
               <Link to="/blog">Blog</Link>
-            </li>
+            </li> */}
             <li>
-              <Link to="/blog-archive">Old blog archive</Link>
+              <Link to="/old-blog-archive">Old blog archive</Link>
             </li>
           </ul>
-        </nav> */}
+        </nav>
       </header>
 
       <main className="container mt-10">
