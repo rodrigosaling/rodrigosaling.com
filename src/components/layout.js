@@ -1,36 +1,53 @@
-import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-import Header from './header';
 import Footer from './footer';
-
-// import 'sanitize.css';
+import Header from './header';
 import './layout.css';
-
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
+function Layout({ pageLang, pageTitle, children }) {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
         }
       }
-    `}
-    render={data => (
-      <div className={'container'}>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <Footer />
-      </div>
-    )}
-  />
-);
+    }
+  `);
+
+  const siteTitle = data.site.siteMetadata.title;
+
+  return (
+    <>
+      <Helmet
+        htmlAttributes={{
+          lang: pageLang,
+          class: 'p-5 bg-slate-50 text-slate-700',
+        }}
+      >
+        <title>
+          {pageTitle && `${pageTitle} - `}
+          {siteTitle}
+        </title>
+      </Helmet>
+      <Header siteTitle={siteTitle} />
+      <main className="container mt-10">{children}</main>
+      <Footer />
+    </>
+  );
+}
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  pageLang: PropTypes.node,
+  pageTitle: PropTypes.node,
+  children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+  pageLang: 'en',
+  pageTitle: '',
 };
 
 export default Layout;

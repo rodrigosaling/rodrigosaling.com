@@ -1,43 +1,52 @@
-import { Link } from 'gatsby';
+import { Link as GLink } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Link from './link';
 
-const Header = ({ siteTitle }) => (
-  <header className="site-header outer">
-    <div className="inner">
-      <nav className="site-nav">
-        <div className="site-nav-left">
-          <Link className="site-nav-logo" to="/">
+function Header({ siteTitle }) {
+  return (
+    <header>
+      <div>
+        <div>
+          <GLink to="/" className="font-bold">
             {siteTitle}
-          </Link>
+          </GLink>
         </div>
-        <div className="site-nav-right">
-          <ul className="nav" role="menu">
-            <li className="nav-about-me nav-current" role="menuitem">
-              <Link to="/sobre-mim/">Sobre mim</Link>
+        <header>
+          <nav className="mt-5">
+            <ul className="flex gap-4">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              {/* <li>
+              <Link to="/about-me">About me</Link>
             </li>
-            <li className="nav-projetos" role="menuitem">
-              <Link to="/projetos/">Projetos</Link>
+            <li>
+              <Link to="/portfolio">Portfolio</Link>
             </li>
-            <li className="nav-blog" role="menuitem">
-              <Link to="/blog/">Blog</Link>
+            <li>
+              <Link to="/code">Code</Link>
             </li>
-            <li className="nav-191" role="menuitem">
-              <Link to="/191/">191</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-);
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li> */}
+              <li>
+                <Link to="/old-blog-archive">Old blog archive</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </header>
+  );
+}
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: 'Rodrigo Saling'
+  siteTitle: 'Rodrigo Saling',
 };
 
 export default Header;
