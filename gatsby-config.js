@@ -28,5 +28,13 @@ module.exports = {
       },
       __key: 'pages',
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'old-blog-archive',
+        path: './content/old-blog-archive/',
+      },
+      __key: 'old-blog-archive',
+    },
   ],
 };

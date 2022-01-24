@@ -1,19 +1,26 @@
 import React from 'react';
-
-import Link from './link';
+import { linkClasses } from './link';
 
 function Footer() {
   return (
     <footer className="mt-10">
       <p className="text-xs">
         Built with{' '}
-        <Link to="https://www.gatsbyjs.com/" title="Go to Gatsby website">
+        <a
+          href="https://www.gatsbyjs.com/"
+          title="Go to Gatsby website"
+          className={linkClasses}
+        >
           Gatsby
-        </Link>{' '}
+        </a>{' '}
         and{' '}
-        <Link to="https://tailwindcss.com/" title="Go to Tailwind CSS website">
+        <a
+          href="https://tailwindcss.com/"
+          title="Go to Tailwind CSS website"
+          className={linkClasses}
+        >
           Tailwind CSS
-        </Link>
+        </a>
         .
       </p>
     </footer>

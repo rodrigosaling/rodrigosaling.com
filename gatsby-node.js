@@ -1,3 +1,4 @@
+// https://github.com/gatsbyjs/gatsby/issues/17159#issuecomment-549091641
 exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
   actions.createTypes([
     schema.buildObjectType({
