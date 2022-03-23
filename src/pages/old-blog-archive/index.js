@@ -4,6 +4,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../../components/layout';
 import Link from '../../components/link';
 
+const publishedAt = (date) =>
+  new Intl.DateTimeFormat('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'America/Sao_Paulo',
+  }).format(new Date(date));
+
 function OldBlogArchivePage() {
   const data = useStaticQuery(graphql`
     query {
@@ -19,8 +27,6 @@ function OldBlogArchivePage() {
           slug
           frontmatter {
             title
-            tags
-            slug
             date
           }
         }
@@ -33,11 +39,11 @@ function OldBlogArchivePage() {
       <h2 className="font-bold">Old Blog Archive</h2>
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
-          <h2>
+          <h3>
             <Link to={`${node.slug}`}>{node.frontmatter.title}</Link>
-          </h2>
+          </h3>
 
-          <p>Posted: {node.frontmatter.date}</p>
+          <p>Publicado em {publishedAt(node.frontmatter.date)}</p>
         </article>
       ))}
     </Layout>
