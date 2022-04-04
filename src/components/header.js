@@ -1,4 +1,4 @@
-import { Link as GLink } from 'gatsby';
+import { Link as GastbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Link from './link';
@@ -8,9 +8,9 @@ function Header({ siteTitle }) {
     <header>
       <div>
         <div>
-          <GLink to="/" className="font-bold">
+          <GastbyLink to="/" className="font-bold">
             {siteTitle}
-          </GLink>
+          </GastbyLink>
         </div>
         <header>
           <nav className="mt-5">
