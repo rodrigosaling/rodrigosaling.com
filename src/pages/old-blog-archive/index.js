@@ -15,19 +15,25 @@ const publishedAt = (date) =>
 function OldBlogArchivePage() {
   const data = useStaticQuery(graphql`
     query {
-      allMdx(
+      allFile(
         filter: {
-          isFuture: { eq: false }
-          frontmatter: { published: { eq: true } }
+          sourceInstanceName: { eq: "old-blog-archive" }
+          childMdx: {
+            isFuture: { eq: false }
+            frontmatter: { published: { eq: true } }
+          }
         }
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { fields: childMdx___frontmatter___date, order: DESC }
       ) {
+        totalCount
         nodes {
-          id
-          slug
-          frontmatter {
-            title
-            date
+          childMdx {
+            id
+            slug
+            frontmatter {
+              title
+              date
+            }
           }
         }
       }
@@ -37,13 +43,15 @@ function OldBlogArchivePage() {
   return (
     <Layout pageTitle="Old Blog Archive">
       <h2 className="font-bold">Old Blog Archive</h2>
-      {data.allMdx.nodes.map((node) => (
-        <article key={node.id}>
+      {data.allFile.nodes.map((node) => (
+        <article key={node.childMdx.id}>
           <h3>
-            <Link to={`${node.slug}`}>{node.frontmatter.title}</Link>
+            <Link to={`${node.childMdx.slug}`}>
+              {node.childMdx.frontmatter.title}
+            </Link>
           </h3>
 
-          <p>Publicado em {publishedAt(node.frontmatter.date)}</p>
+          <p>Publicado em {publishedAt(node.childMdx.frontmatter.date)}</p>
         </article>
       ))}
     </Layout>
