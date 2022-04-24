@@ -1,35 +1,45 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-
-function BlogPost({ data }) {
-  const post = data.mdx.frontmatter;
-
-  return (
-    <div className="wrapper">
-      <header>
-        <Link to="/">Go back to "Home"</Link>
-      </header>
-      <main>
-        <h1>{post.title}</h1>
-        <em>{post.date}</em>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      </main>
-    </div>
-  );
-}
-
-export default BlogPost;
+import Layout from '../../components/layout';
+import { publishedAt } from '../../utils';
 
 export const query = graphql`
   query ($slug: String!) {
-    mdx(slug: { eq: $slug }) {
-      body
-      frontmatter {
-        date(formatString: "DD MMMM YYYY", locale: "pt-br")
-        title
-        tags
+    allFile(
+      filter: {
+        sourceInstanceName: { eq: "old-blog-archive" }
+        childMdx: {
+          frontmatter: { published: { eq: true } }
+          slug: { eq: $slug }
+        }
+      }
+    ) {
+      nodes {
+        childMdx {
+          body
+          frontmatter {
+            date
+            title
+            tags
+          }
+        }
       }
     }
   }
 `;
+
+function BlogPost({ data }) {
+  // TODO Existe uma maneira de trazer somente um elemento ao invés do array?
+  const mdx = data.allFile.nodes[0].childMdx;
+
+  return (
+    <Layout pageTitle={mdx.frontmatter.title}>
+      <h1>{mdx.frontmatter.title}</h1>
+      <em>Publicado em {publishedAt(mdx.frontmatter.date)}</em>
+      <MDXRenderer>{mdx.body}</MDXRenderer>
+    </Layout>
+  );
+}
+
+export default BlogPost;

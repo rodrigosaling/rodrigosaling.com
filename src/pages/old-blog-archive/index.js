@@ -3,14 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../../components/layout';
 import Link from '../../components/link';
-
-const publishedAt = (date) =>
-  new Intl.DateTimeFormat('pt-BR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'America/Sao_Paulo',
-  }).format(new Date(date));
+import { publishedAt } from '../../utils';
 
 function OldBlogArchivePage() {
   const data = useStaticQuery(graphql`
