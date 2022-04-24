@@ -43,17 +43,21 @@ function OldBlogArchivePage() {
   return (
     <Layout pageTitle="Old Blog Archive">
       <h2 className="font-bold">Old Blog Archive</h2>
-      {data.allFile.nodes.map((node) => (
-        <article key={node.childMdx.id}>
-          <h3>
-            <Link to={`${node.childMdx.slug}`}>
-              {node.childMdx.frontmatter.title}
-            </Link>
-          </h3>
+      <div className="space-y-5">
+        {data.allFile.nodes.map((node) => (
+          <article key={node.childMdx.id}>
+            <h3>
+              <Link to={`${node.childMdx.slug}`}>
+                {node.childMdx.frontmatter.title}
+              </Link>
+            </h3>
 
-          <p>Publicado em {publishedAt(node.childMdx.frontmatter.date)}</p>
-        </article>
-      ))}
+            <p className="text-sm">
+              Publicado em {publishedAt(node.childMdx.frontmatter.date)}
+            </p>
+          </article>
+        ))}
+      </div>
     </Layout>
   );
 }
