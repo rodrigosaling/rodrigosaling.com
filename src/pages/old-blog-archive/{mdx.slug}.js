@@ -35,8 +35,10 @@ function BlogPost({ data }) {
 
   return (
     <Layout pageTitle={mdx.frontmatter.title}>
-      <h1>{mdx.frontmatter.title}</h1>
-      <em>Publicado em {publishedAt(mdx.frontmatter.date)}</em>
+      <h1 className="font-bold">{mdx.frontmatter.title}</h1>
+      <p className="italic text-sm mb-4">
+        Publicado em {publishedAt(mdx.frontmatter.date)}
+      </p>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   );
