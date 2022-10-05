@@ -26,13 +26,13 @@ function Header({ siteTitle }) {
             </li>
             <li>
               <Link to="/code">Code</Link>
-            </li> */}
+            </li>
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
               <li>
                 <Link to="/old-blog-archive">Old blog archive</Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </header>
