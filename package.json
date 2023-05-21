@@ -1,38 +1,36 @@
 {
   "name": "rodrigosaling.com",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "description": "rodrigosaling.com",
   "author": "Rodrigo Saling",
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "version": "gatsby --version"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@mdx-js/react": "^2.1.3",
-    "gatsby": "^4.24.1",
-    "gatsby-plugin-image": "^2.24.0",
-    "gatsby-plugin-mdx": "^4.3.0",
-    "gatsby-plugin-postcss": "^5.24.0",
-    "gatsby-plugin-react-helmet": "^5.24.0",
-    "gatsby-plugin-sharp": "^4.24.0",
-    "gatsby-plugin-sitemap": "^5.24.0",
-    "gatsby-source-filesystem": "^4.24.0",
-    "gatsby-transformer-sharp": "^4.24.0",
-    "postcss": "^8.4.17",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@mdx-js/react": "^2.3.0",
+    "gatsby": "^5.9.1",
+    "gatsby-plugin-image": "^3.10.0",
+    "gatsby-plugin-mdx": "^5.10.0",
+    "gatsby-plugin-sharp": "^5.10.0",
+    "gatsby-plugin-sitemap": "^6.10.0",
+    "gatsby-source-filesystem": "^5.10.0",
+    "gatsby-transformer-sharp": "^5.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "prettier": "^2.6.2",
-    "tailwindcss": "^3.0.24"
+    "@types/node": "^18.16.5",
+    "@types/react": "^18.2.5",
+    "@types/react-dom": "^18.2.4",
+    "typescript": "^5.0.4"
   }
 }
