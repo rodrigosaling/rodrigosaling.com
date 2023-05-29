@@ -29,7 +29,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 >
                   <h2 className="text-lg font-bold">About me</h2>
                   <p className="text-slate-500 text-sm">
-                    Some more information about the person who is building this
+                    More information about the person who is building this
                     website.
                   </p>
                 </Link>
