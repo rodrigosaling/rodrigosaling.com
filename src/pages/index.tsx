@@ -11,7 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </header>
 
         <main className="mt-4">
-          <p className="mr-6 ml-6">
+          <p className="mr-6 ml-6 text-base">
             Building web stuff one{' '}
             <code className="bg-gray-200 p-1 rounded-md text-sm">
               <span className="text-red-500">console</span>.
