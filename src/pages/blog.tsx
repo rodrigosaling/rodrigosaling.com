@@ -1,36 +1,60 @@
 import * as React from 'react';
-import type { HeadFC, PageProps } from 'gatsby';
+import { HeadFC, PageProps, graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
 
 const BlogPage: React.FC<PageProps> = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "blog" }
+          childrenMdx: {
+            elemMatch: { frontmatter: { published: { eq: true } } }
+          }
+        }
+        sort: { childrenMdx: { frontmatter: { date: DESC } } }
+      ) {
+        totalCount
+        nodes {
+          childMdx {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
-    <div className="">
-      <div className="">
-        <header>
-          <h1 className="text-4xl font-bold">Blog</h1>
+    <div className="font-serif border-t-8 border-t-black bg-amber-50/60 h-screen">
+      <div className="max-w-3xl mx-auto">
+        <header className="border-b-2 border-b-black pt-14 pb-10">
+          <h1 className="text-5xl font-bold  text-center">Blog</h1>
         </header>
 
-        <main className="mt-4">
-          <nav></nav>
+        <main className="">
+          {!data.allFile.nodes.length && <p>Nada aqui ainda.</p>}
+
+          {data.allFile.nodes.map((node) => (
+            <article key={node.childMdx.id}>
+              <h2>
+                <Link to={`${node.childMdx.fields.slug}`}>
+                  {node.childMdx.frontmatter.title}
+                </Link>
+              </h2>
+
+              <p>Publicado em {node.childMdx.frontmatter.date}</p>
+            </article>
+          ))}
         </main>
 
-        <footer className="text-xs mt-6">
-          This site is built with{' '}
-          <a
-            href="https://www.gatsbyjs.com/"
-            className="underline hover:no-underline hover:text-purple-500"
-          >
-            Gatsby
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://tailwindcss.com/"
-            className="underline hover:no-underline hover:text-cyan-500"
-          >
-            Tailwind
-          </a>
-          .
-        </footer>
+        <footer className=""></footer>
       </div>
     </div>
   );
@@ -38,4 +62,9 @@ const BlogPage: React.FC<PageProps> = () => {
 
 export default BlogPage;
 
-export const Head: HeadFC = () => <title>Blog - Rodrigo Saling</title>;
+export const Head: HeadFC = () => (
+  <>
+    <html lang="pt-br" />
+    <title>Blog - Rodrigo Saling</title>
+  </>
+);
