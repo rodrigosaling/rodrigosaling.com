@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const ProjectsPage: React.FC<PageProps> = () => {
   return (
-    <div className="">
+    <div className="halftone h-screen">
       <div className="">
         <header>
           <h1 className="text-4xl font-bold">Projects</h1>
@@ -12,6 +12,12 @@ const ProjectsPage: React.FC<PageProps> = () => {
 
         <main className="mt-4">
           <nav></nav>
+          <p>
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum
+            dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+            amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet.{' '}
+          </p>
         </main>
 
         <footer className="text-xs mt-6">
