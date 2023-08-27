@@ -13,30 +13,18 @@ const ProjectsPage: React.FC<PageProps> = () => {
         <main className="mt-4">
           <nav></nav>
           <p>
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum
-            dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-            amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
-            ipsum dolor sit amet. Lorem ipsum dolor sit amet.{' '}
+            You can check{' '}
+            <a
+              href="https://github.com/rodrigosaling"
+              className="underline hover:no-underline hover:text-orange-400"
+            >
+              my GitHub profile
+            </a>{' '}
+            in the meantime.
           </p>
         </main>
 
-        <footer className="text-xs mt-6">
-          This site is built with{' '}
-          <a
-            href="https://www.gatsbyjs.com/"
-            className="underline hover:no-underline hover:text-purple-500"
-          >
-            Gatsby
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://tailwindcss.com/"
-            className="underline hover:no-underline hover:text-cyan-500"
-          >
-            Tailwind
-          </a>
-          .
-        </footer>
+        <footer className="text-xs mt-6"></footer>
       </div>
     </div>
   );
