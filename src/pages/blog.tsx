@@ -12,7 +12,7 @@ const BlogPage: React.FC<PageProps> = () => {
             elemMatch: { frontmatter: { published: { eq: true } } }
           }
         }
-        sort: { childrenMdx: { frontmatter: { updatedDate: DESC } } }
+        sort: { childrenMdx: { frontmatter: { publishedDate: DESC } } }
       ) {
         totalCount
         nodes {
@@ -24,7 +24,6 @@ const BlogPage: React.FC<PageProps> = () => {
             frontmatter {
               title
               publishedDate
-              updatedDate
             }
           }
         }
@@ -34,7 +33,7 @@ const BlogPage: React.FC<PageProps> = () => {
 
   return (
     <div className="font-serif border-t-8 border-t-black bg-amber-50/60 h-screen">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto px-4 lg:px-0">
         <header className="border-b-2 border-b-black pt-14 pb-10 relative">
           <h1 className="text-5xl font-bold text-center">Blog</h1>
 
