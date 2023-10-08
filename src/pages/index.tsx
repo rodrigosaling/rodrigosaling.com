@@ -86,4 +86,13 @@ const IndexPage: React.FC<PageProps> = () => (
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Rodrigo Saling</title>;
+export const Head: HeadFC = () => (
+  <>
+    <html lang="en" />
+    <title>Rodrigo Saling</title>
+    <meta
+      name="description"
+      content="Rodrigo is a Software Engineer located in Porto Alegre, working remotely for League Inc."
+    />
+  </>
+);
