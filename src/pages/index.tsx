@@ -33,7 +33,7 @@ const IndexPage: React.FC<PageProps> = () => (
         at a time.
       </p>
       <p className="mt-12 mb-16">
-        Rodrigo is a Software Engineer located in{' '}
+        Rodrigo is a Senior Software Engineer located in{' '}
         <a
           href="https://en.wikipedia.org/wiki/Porto_Alegre"
           className="rio-grande-do-sul underline"
@@ -41,15 +41,18 @@ const IndexPage: React.FC<PageProps> = () => (
         >
           Porto Alegre
         </a>
-        , working remotely for{' '}
-        <a
-          href="https://league.com/"
-          className="text-violet-700 underline hover:no-underline"
-          title="Link to League Inc. website"
-        >
-          League Inc
-        </a>
-        .
+        ,{' '}
+        <s className="strike-through">
+          working remotely for{' '}
+          <a
+            href="https://league.com/"
+            className="text-violet-700 underline hover:no-underline"
+            title="Link to League Inc. website"
+          >
+            League Inc
+          </a>
+        </s>{' '}
+        (not anymore).
       </p>
     </main>
     <footer className="py-3 border-t-neutral-300 border-t mt-7 flex justify-between">
