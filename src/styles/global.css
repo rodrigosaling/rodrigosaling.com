@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+a {
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  @apply mt-3;
+}
+
+p + p {
+  @apply mt-5;
+}
+
+/* Created to be used in the Projects page. Saving for a future layout */
 .halftone {
   background-image: radial-gradient(
     circle at center,

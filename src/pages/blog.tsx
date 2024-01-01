@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { HeadFC, PageProps, graphql, useStaticQuery } from 'gatsby';
-import { Link } from 'gatsby';
+import Link from '../components/link';
+import Template from '../templates/template';
+import { HeadingOne } from '../components/heading-one';
+import { HeadingTwo } from '../components/heading-two';
 
 const BlogPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`
@@ -24,6 +27,7 @@ const BlogPage: React.FC<PageProps> = () => {
             frontmatter {
               title
               publishedDate
+              tags
             }
           }
         }
@@ -32,48 +36,47 @@ const BlogPage: React.FC<PageProps> = () => {
   `);
 
   return (
-    <div className="font-serif border-t-8 border-t-black bg-amber-50/60 h-screen">
-      <div className="max-w-3xl mx-auto px-4 lg:px-0">
-        <header className="border-b-2 border-b-black pt-14 pb-10 relative">
-          <h1 className="text-5xl font-bold text-center">Blog</h1>
+    <Template htmlLang="pt-br">
+      <>
+        <HeadingOne>Blog</HeadingOne>
 
-          <nav className="absolute top-0 left-0 w-full">
-            <ul className="flex justify-between">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about-me">Sobre mim</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projetos</Link>
-              </li>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <p>Todo o conteúdo do blog está escrito em português brasileiro.</p>
 
-        <main className="">
-          {!data.allFile.nodes.length && <p>Nada aqui ainda.</p>}
+        {!data.allFile.nodes.length && <p>Nada aqui ainda.</p>}
 
-          {data.allFile.nodes.map((node) => (
+        {data.allFile.nodes.map((node) => {
+          const publishedDate = new Date(
+            node.childMdx.frontmatter.publishedDate
+          );
+
+          return (
             <article key={node.childMdx.id}>
-              <h2 className="text-4xl font-bold">
+              <HeadingTwo>
                 <Link to={`${node.childMdx.fields.slug}`}>
                   {node.childMdx.frontmatter.title}
                 </Link>
-              </h2>
+              </HeadingTwo>
 
-              <p>Publicado em {node.childMdx.frontmatter.publishedDate}</p>
+              <time dateTime={publishedDate.toISOString()} className="block">
+                {publishedDate.toLocaleDateString('pt-br', {
+                  day: '2-digit',
+                  month: 'short',
+                  year: 'numeric',
+                })}
+              </time>
+
+              {/* <ul className="flex gap-2">
+                {node.childMdx.frontmatter.tags.map((tag) => (
+                  <li key={tag}>
+                    <Link to={`/tags/${tag}`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul> */}
             </article>
-          ))}
-        </main>
-
-        <footer className=""></footer>
-      </div>
-    </div>
+          );
+        })}
+      </>
+    </Template>
   );
 };
 
