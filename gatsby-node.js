@@ -28,7 +28,7 @@ exports.onCreateNode = ({ node, actions: { createNodeField } }) => {
 
 // https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/
 exports.createPages = async function ({ actions, graphql }) {
-  const postTemplate = path.resolve('./src/pages/blog-post.tsx');
+  const postTemplate = path.resolve('./src/templates/blog-post.tsx');
 
   const { data } = await graphql(`
     query {
@@ -57,7 +57,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const slug = node.childMdx.fields.slug;
     actions.createPage({
       path: `blog/${slug}`,
-      // component: require.resolve(`./src/pages/blog-post.tsx`),
+      // component: require.resolve(`./src/templates/blog-post.tsx`),
       component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
       context: { slug: slug },
     });

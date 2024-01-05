@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, HeadFC, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
-import Template from '../templates/template';
+import Template from './template';
 import { HeadingOne } from '../components/heading-one';
 
 const shortcodes = { Link }; // Provide common components here
