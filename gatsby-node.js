@@ -57,7 +57,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const slug = node.childMdx.fields.slug;
     actions.createPage({
       path: `blog/${slug}`,
-      // component: require.resolve(`./src/templates/blog-post.tsx`),
+      // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#layouts
       component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
       context: { slug: slug },
     });
