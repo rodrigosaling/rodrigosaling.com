@@ -24,6 +24,7 @@ export default function BlogPost({ data, children }) {
               timeZone: 'UTC',
             })}
           </time>
+          .
         </p>
         <MDXProvider components={shortcodes}>{children}</MDXProvider>
 
