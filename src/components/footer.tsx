@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="py-3 border-t-neutral-300 border-t mt-7 flex justify-between">
       <div className="text-sm">
-        {isBlog ? 'Espere MacGyverismos.' : 'Expect MacGyverisms.'}
+        {isBlog ? 'Espere por MacGyverismos.' : 'Expect MacGyverisms.'}
       </div>
 
       <Link to="/about-me#whats-up-with-the-logo" className="">
