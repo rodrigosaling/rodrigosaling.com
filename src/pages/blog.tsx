@@ -57,11 +57,12 @@ const BlogPage: React.FC<PageProps> = () => {
                 </Link>
               </HeadingTwo>
 
-              <time dateTime={publishedDate.toISOString()} className="block">
+              <time dateTime={publishedDate.toUTCString()} className="block">
                 {publishedDate.toLocaleDateString('pt-br', {
                   day: '2-digit',
                   month: 'short',
                   year: 'numeric',
+                  timeZone: 'UTC',
                 })}
               </time>
 
