@@ -16,11 +16,12 @@ export default function BlogPost({ data, children }) {
         <HeadingOne>{post.frontmatter.title}</HeadingOne>
         <p className="mb-10">
           Publicado em{' '}
-          <time dateTime={publishedDate.toISOString()}>
+          <time dateTime={publishedDate.toUTCString()}>
             {publishedDate.toLocaleDateString('pt-br', {
               day: '2-digit',
               month: 'long',
               year: 'numeric',
+              timeZone: 'UTC',
             })}
           </time>
         </p>
