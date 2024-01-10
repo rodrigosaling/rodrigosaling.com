@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
-import { Link } from 'gatsby';
+import SEO from '../templates/seo';
 import '../styles/index.css';
 
 import Template from '../templates/template';
@@ -42,3 +42,14 @@ const IndexPage: React.FC<PageProps> = () => (
 );
 
 export default IndexPage;
+
+export const Head: HeadFC = () => (
+  <SEO>
+    <html lang="en" />
+    <title>Rodrigo Saling</title>
+    <meta
+      name="description"
+      content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
+    />
+  </SEO>
+);
