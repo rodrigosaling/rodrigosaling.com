@@ -4,6 +4,7 @@ import Link from '../components/link';
 import Template from '../templates/template';
 import { HeadingOne } from '../components/heading-one';
 import { HeadingTwo } from '../components/heading-two';
+import SEO from '../templates/seo';
 
 const BlogPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`
@@ -84,8 +85,12 @@ const BlogPage: React.FC<PageProps> = () => {
 export default BlogPage;
 
 export const Head: HeadFC = () => (
-  <>
+  <SEO>
     <html lang="pt-br" />
     <title>Blog - Rodrigo Saling</title>
-  </>
+    <meta
+      name="description"
+      content="Rodrigo é um Senior Software Engineer que mora em Porto Alegre, Brasil."
+    />
+  </SEO>
 );
