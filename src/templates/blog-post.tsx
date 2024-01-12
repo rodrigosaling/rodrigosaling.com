@@ -3,6 +3,7 @@ import { graphql, HeadFC, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import Template from './template';
 import { HeadingOne } from '../components/heading-one';
+import SEO from './seo';
 
 const shortcodes = { Link }; // Provide common components here
 
@@ -72,9 +73,13 @@ export const Head: HeadFC = ({ data }) => {
   const post = data.allFile.nodes[0].childMdx;
 
   return (
-    <>
+    <SEO>
       <html lang="pt-br" />
       <title>{post.frontmatter.title} - Blog - Rodrigo Saling</title>
-    </>
+      <meta
+        name="description"
+        content="Rodrigo é um Senior Software Engineer que mora em Porto Alegre, Brasil."
+      ></meta>
+    </SEO>
   );
 };
