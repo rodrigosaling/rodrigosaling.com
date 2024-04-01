@@ -25,18 +25,7 @@ const IndexPage: React.FC<PageProps> = () => (
       >
         Porto Alegre
       </a>
-      ,{' '}
-      <s className="strike-through">
-        working remotely for{' '}
-        <a
-          href="https://league.com/"
-          className="text-violet-700 underline hover:no-underline"
-          title="Link to League Inc. website"
-        >
-          League Inc
-        </a>
-      </s>{' '}
-      (not anymore).
+      , working at ADP Brazil Labs.
     </p>
   </Template>
 );
