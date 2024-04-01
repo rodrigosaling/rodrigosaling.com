@@ -9,33 +9,41 @@ const ProjectsPage: React.FC<PageProps> = () => {
     <Template>
       <HeadingOne>Projects</HeadingOne>
 
-      <HeadingTwo>Gerador de Senhas (Password Generator)</HeadingTwo>
-
       <p>
-        An easy-to-remember password generator that uses Brazilian Portuguese
-        words. Still a working in progress. Uses SvelteKit.
-      </p>
-      <p>
-        You can{' '}
-        <a href="https://gerador-senhas.rodrigosaling.com/">check it online</a>{' '}
-        or go directly to{' '}
-        <a href="https://github.com/rodrigosaling/gerador-senhas">
-          the repository
-        </a>
-        .
+        A list of personal/side/pet projects that are at different levels of
+        development.
       </p>
 
-      <HeadingTwo>Other Projects</HeadingTwo>
-      <p>
-        You can check{' '}
-        <a
-          href="https://github.com/rodrigosaling"
-          className="underline hover:no-underline hover:text-orange-400"
-        >
-          my GitHub profile
-        </a>{' '}
-        in the meantime.
-      </p>
+      <article>
+        <HeadingTwo>
+          <a href="https://gerador-senhas.rodrigosaling.com/">
+            Gerador de Senhas (Password Generator)
+          </a>
+        </HeadingTwo>
+
+        <p>
+          An easy-to-remember password generator that uses Brazilian Portuguese
+          words. A working in progress. Uses SvelteKit.
+        </p>
+        <p>
+          You can{' '}
+          <a href="https://gerador-senhas.rodrigosaling.com/">try it online</a>{' '}
+          or check the code in{' '}
+          <a href="https://github.com/rodrigosaling/gerador-senhas">
+            the repository
+          </a>
+          .
+        </p>
+      </article>
+
+      <aside>
+        <HeadingTwo>Other Projects</HeadingTwo>
+        <p>
+          You can check{' '}
+          <a href="https://github.com/rodrigosaling">my GitHub profile</a> in
+          the meantime.
+        </p>
+      </aside>
     </Template>
   );
 };
