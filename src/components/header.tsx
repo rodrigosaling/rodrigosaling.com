@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { useLocation } from '@reach/router';
 import type { PageProps } from 'gatsby';
 import { Link } from 'gatsby';
-import { useLocation } from '@reach/router';
+import * as React from 'react';
 
 export default function Header(): React.FC<PageProps> {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const isBlog = location.pathname.includes('/blog/');
 
-  const SiteName = ({ children }) => {
+  const SiteName = ({ children }: { children: React.ReactNode }) => {
     const Component = isHome ? 'h1' : 'div';
     return <Component>{children}</Component>;
   };

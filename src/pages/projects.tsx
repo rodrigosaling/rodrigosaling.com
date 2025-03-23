@@ -1,8 +1,9 @@
 import * as React from 'react';
-import type { HeadFC, PageProps } from 'gatsby';
+import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
 import Template from '../templates/template';
 import { HeadingOne } from '../components/heading-one';
 import { HeadingTwo } from '../components/heading-two';
+import SEO from '../templates/seo';
 
 const ProjectsPage: React.FC<PageProps> = () => {
   return (
@@ -50,4 +51,16 @@ const ProjectsPage: React.FC<PageProps> = () => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <title>Projects - Rodrigo Saling</title>;
+export const Head: HeadFC = () => {
+  const {site: gatsbyConfig} = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  return <SEO><title>Projects - {gatsbyConfig.site.siteMetadata.title}</title></SEO>;
+};

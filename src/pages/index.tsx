@@ -1,14 +1,15 @@
-import * as React from 'react';
-import type { HeadFC, PageProps } from 'gatsby';
-import SEO from '../templates/seo';
 import '../styles/index.css';
-
+import SEO from '../templates/seo';
 import Template from '../templates/template';
+import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
+import * as React from 'react';
 
 const IndexPage: React.FC<PageProps> = () => (
   <Template>
     <p>
-      Building web stuff one{' '}
+      Building web stuff
+      <br />
+      one{' '}
       <code>
         <span>console</span>.<span>log</span>()
       </code>{' '}
@@ -29,13 +30,24 @@ const IndexPage: React.FC<PageProps> = () => (
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-  <SEO>
-    <html lang="en" />
-    <title>Rodrigo Saling</title>
-    <meta
-      name="description"
-      content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
-    />
-  </SEO>
-);
+export const Head: HeadFC = () => {
+  const { site: gatsbyConfig } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+  return (
+    <SEO>
+      <html lang="en" />
+      <title>{gatsbyConfig.site.siteMetadata.title}</title>
+      <meta
+        name="description"
+        content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
+      />
+    </SEO>
+  );
+};

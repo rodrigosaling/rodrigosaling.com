@@ -1,14 +1,13 @@
+import Footer from '../components/footer';
+import Header from '../components/header';
 import * as React from 'react';
 
-import Header from '../components/header';
-import Footer from '../components/footer';
-
-const Template = ({ children, htmlLang }) => (
-  <>
-    <Header htmlLang={htmlLang} />
+const Template = ({ children }) => (
+  <div>
+    <Header />
     <main>{children}</main>
     <Footer />
-  </>
+  </div>
 );
 
 export default Template;

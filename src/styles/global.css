@@ -6,11 +6,11 @@ a:hover {
 }
 
 p {
-  @apply mt-3;
+  margin-top: 8px;
 }
 
 p + p {
-  @apply mt-5;
+  margin-top: 12px;
 }
 
 /* Created to be used in the Projects page. Saving for a future layout */

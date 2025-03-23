@@ -1,5 +1,9 @@
 {
-  "cSpell.words": ["frontmatter", "Saling"],
+  "cSpell.words": [
+    "frontmatter",
+    "gatsby",
+    "Saling"
+  ],
   "cSpell.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

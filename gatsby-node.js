@@ -15,79 +15,51 @@ function slugify(sentence, separator = '-') {
 }
 
 // https://paulie.dev/posts/2022/09/mdx-2-breaking-changes-and-gatsby-plugin-mdx-v4-slug/
-// exports.onCreateNode = ({ node, actions: { createNodeField } }) => {
-//   if (node.internal.type === 'Mdx') {
-//     // const slug = createFilePath({ node, getNode });
-//     createNodeField({
-//       node,
-//       name: 'slug',
-//       value: slugify(node.frontmatter.title),
-//     });
-//   }
-// };
+exports.onCreateNode = ({ node, actions: { createNodeField } }) => {
+  if (node.internal.type === 'Mdx') {
+    // const slug = createFilePath({ node, getNode });
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slugify(node.frontmatter.title),
+    });
+  }
+};
 
 // https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/
 exports.createPages = async function ({ actions, graphql }) {
-  // const postTemplate = path.resolve('./src/templates/blog-post.tsx');
-  const { createPage } = actions;
+  const postTemplate = path.resolve('./src/templates/blog-post.tsx');
 
-  const result = await graphql(`
+  const { data } = await graphql(`
     query {
-      allContentfulBlogPost {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "blog" }
+          childrenMdx: {
+            elemMatch: { frontmatter: { isPublished: { eq: true } } }
+          }
+        }
+      ) {
         nodes {
-          id
-          title
-          slug
-          content {
-            childMarkdownRemark {
-              html
+          childMdx {
+            fields {
+              slug
+            }
+            internal {
+              contentFilePath
             }
           }
         }
       }
     }
   `);
-
-  result.data.allContentfulBlogPost.nodes.forEach((node) => {
-    createPage({
-      path: `/blog/${node.slug}`,
-      component: path.resolve('./src/templates/blog-post.tsx'),
-      context: {
-        slug: node.slug,
-        content: node.content.childMarkdownRemark.html,
-      },
+  data.allFile.nodes.forEach((node) => {
+    const { slug } = node.childMdx.fields;
+    actions.createPage({
+      path: `blog/${slug}`,
+      // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#layouts
+      component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
+      context: { slug },
     });
   });
-
-  const resultTags = await graphql(`
-    query {
-      allContentfulTag {
-        nodes {
-          name
-          contentful_id
-        }
-      }
-    }
-  `);
-
-  resultTags.data.allContentfulTag.nodes.forEach((tag) => {
-    createPage({
-      path: `/tags/${tag.contentful_id}`,
-      component: path.resolve('./src/templates/blog-tag.tsx'),
-      context: {
-        name: tag.name,
-        contentfulId: tag.contentful_id,
-      },
-    });
-  });
-
-  // data.allFile.nodes.forEach((node) => {
-  //   const slug = node.slug;
-  //   actions.createPage({
-  //     path: `blog/${slug}`,
-  //     // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#layouts
-  //     component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
-  //     context: { slug: slug },
-  //   });
-  // });
 };
