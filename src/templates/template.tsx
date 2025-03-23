@@ -3,12 +3,12 @@ import * as React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-const Template = ({ children }) => (
-  <div className="mx-auto max-w-3xl px-4">
-    <Header />
+const Template = ({ children, htmlLang }) => (
+  <>
+    <Header htmlLang={htmlLang} />
     <main>{children}</main>
     <Footer />
-  </div>
+  </>
 );
 
 export default Template;

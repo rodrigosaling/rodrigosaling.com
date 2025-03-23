@@ -25,23 +25,6 @@ const AboutMePage: React.FC<PageProps> = () => {
           </a>
           .
         </p>
-
-        <HeadingTwo id="whats-up-with-the-logo">
-          What's up with the logo?
-        </HeadingTwo>
-        <p>
-          The logo for this site is an upside down triangle paperclip that
-          resembles an{' '}
-          <a href="https://en.wikipedia.org/wiki/Turned_A">
-            upside down capital A
-          </a>
-          , which is the symbol for{' '}
-          <a href="https://en.wikipedia.org/wiki/Universal_quantification">
-            universal quantification
-          </a>
-          , or "for all" in logic and mathematics. And the paperclip as a homage
-          to MacGyver, the GOAT jack of all trades.{' '}
-        </p>
       </>
     </Template>
   );

@@ -7,25 +7,22 @@ import Template from '../templates/template';
 
 const IndexPage: React.FC<PageProps> = () => (
   <Template>
-    <p className="text-4xl font-bold mt-16">
-      Building web stuff
-      <br />
-      one{' '}
-      <code className="font-mono text-3xl bg-neutral-200 p-1 rounded-md">
+    <p>
+      Building web stuff one{' '}
+      <code>
         <span>console</span>.<span>log</span>()
       </code>{' '}
       at a time.
     </p>
-    <p className="mt-12 mb-16">
+    <p>
       Rodrigo is a Senior Software Engineer located in{' '}
       <a
         href="https://en.wikipedia.org/wiki/Porto_Alegre"
-        className="rio-grande-do-sul underline"
         title="Link to the Porto Alegre Wikipedia page"
       >
         Porto Alegre
       </a>
-      , working at ADP Brazil Labs.
+      , working at SAP Labs Latin America.
     </p>
   </Template>
 );

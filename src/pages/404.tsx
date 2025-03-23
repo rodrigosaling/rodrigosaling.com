@@ -3,15 +3,15 @@ import { Link, HeadFC, PageProps, useStaticQuery, graphql } from 'gatsby';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <div className="w-screen h-screen bg-slate-700 text-slate-300 flex items-end">
-      <main className="p-3">
-        <h1 className="text-9xl font-black font-mono">404</h1>
-        <p className="text-base">
+    <div>
+      <main>
+        <h1>404</h1>
+        <p>
           The page you tried to access does not exist.
         </p>
-        <p className="text-base">
+        <p>
           Maybe you should go back to{' '}
-          <Link to="/" className="underline font-bold hover:text-purple-400">
+          <Link to="/">
             Home
           </Link>{' '}
           and start from there.

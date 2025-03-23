@@ -1,3 +1,0 @@
-{
-  "**/*.{md,mdx}": "node ./update-frontmatter.js"
-}

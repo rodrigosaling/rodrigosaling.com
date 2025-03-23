@@ -3,19 +3,19 @@ import type { HeadFC, PageProps } from 'gatsby';
 
 const UsesPage: React.FC<PageProps> = () => {
   return (
-    <div className="">
-      <div className="">
+    <div>
+      <div>
         <header>
-          <h1 className="text-4xl font-bold">Uses</h1>
+          <h1>Uses</h1>
         </header>
 
-        <main className="mt-4">
+        <main>
           <ul>
             <li>WebStorm for work and VSCode for personal projects</li>
           </ul>
         </main>
 
-        <footer className="text-xs mt-6"></footer>
+        <footer></footer>
       </div>
     </div>
   );

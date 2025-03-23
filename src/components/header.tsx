@@ -10,33 +10,25 @@ export default function Header(): React.FC<PageProps> {
 
   const SiteName = ({ children }) => {
     const Component = isHome ? 'h1' : 'div';
-    return <Component className="font-bold">{children}</Component>;
+    return <Component>{children}</Component>;
   };
 
   return (
-    <header className="py-3 border-b-neutral-300 border-b mt-5 flex justify-between">
+    <header>
       <SiteName>
-        <Link to="/" className="underline hover:no-underline">
-          Rodrigo Saling
-        </Link>
+        <Link to="/">Rodrigo Saling</Link>
       </SiteName>
 
       <nav>
-        <menu className="flex gap-6">
+        <menu>
           <li>
-            <Link to="/about-me" className="underline hover:no-underline">
-              {isBlog ? 'Sobre mim' : 'About me'}
-            </Link>
+            <Link to="/about-me">{isBlog ? 'Sobre mim' : 'About me'}</Link>
           </li>
           <li>
-            <Link to="/projects" className="underline hover:no-underline">
-              {isBlog ? 'Projetos' : 'Projects'}
-            </Link>
+            <Link to="/projects">{isBlog ? 'Projetos' : 'Projects'}</Link>
           </li>
           <li>
-            <Link to="/blog" className="underline hover:no-underline">
-              Blog
-            </Link>
+            <Link to="/blog">Blog</Link>
           </li>
         </menu>
       </nav>

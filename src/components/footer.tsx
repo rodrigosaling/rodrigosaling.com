@@ -8,44 +8,18 @@ export default function Footer() {
   const isBlog = location.pathname.includes('/blog/');
 
   return (
-    <footer className="py-3 border-t-neutral-300 border-t mt-7 flex justify-between">
-      <div className="text-sm">
-        {isBlog ? 'Espere por MacGyverismos.' : 'Expect MacGyverisms.'}
-      </div>
+    <footer>
+      <p>
+        {isBlog ? 'Encontre-me nestes outros lugares:' : 'Find me elsewhere:'}
+      </p>
 
-      <Link to="/about-me#whats-up-with-the-logo" className="">
-        <img
-          alt="Website logo, a triangle paperclip that resembles an upside down A"
-          src={Icon}
-          width={20}
-        />
-      </Link>
-
-      <menu className="flex gap-4">
-        <li className="text-sm">
-          <a
-            href="https://github.com/rodrigosaling"
-            className="underline hover:no-underline"
-          >
-            GitHub
-          </a>
+      <menu>
+        <li>
+          <a href="https://github.com/rodrigosaling">GitHub</a>
         </li>
-        <li className="text-sm">
-          <a
-            href="https://www.linkedin.com/in/rodrigosaling/"
-            className="underline hover:no-underline"
-          >
-            LinkedIn
-          </a>
+        <li>
+          <a href="https://www.linkedin.com/in/rodrigosaling/">LinkedIn</a>
         </li>
-        {/* <li className="text-sm">
-                <a
-                  href="https://medium.com/@rodrigosaling"
-                  className="underline hover:no-underline"
-                >
-                  Medium
-                </a>
-              </li> */}
       </menu>
     </footer>
   );

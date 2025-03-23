@@ -7,7 +7,7 @@ import SEO from './seo';
 
 const shortcodes = { Link }; // Provide common components here
 
-export default function BlogPost({ data, children, content }) {
+export default function BlogTag({ data, name, contentfulId }) {
   const post = data.contentfulBlogPost;
   const publishedDate = new Date(post.createdAt);
   // const content = data.contentfulBlogPost.content.childMarkdownRemark.html;
@@ -15,7 +15,7 @@ export default function BlogPost({ data, children, content }) {
   return (
     <Template htmlLang="pt-br">
       <>
-        <HeadingOne>{post.title}</HeadingOne>
+        <HeadingOne>Tag: {name}</HeadingOne>
         <p>
           Publicado em{' '}
           <time dateTime={publishedDate.toUTCString()}>
@@ -28,7 +28,6 @@ export default function BlogPost({ data, children, content }) {
           </time>
           .
         </p>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
 
         <div>
           <Link to="/blog">Voltar para o Blog</Link>
@@ -39,30 +38,34 @@ export default function BlogPost({ data, children, content }) {
 }
 
 export const query = graphql`
-  query BlogPostBySlug($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      id
-      title
-      slug
-      createdAt
-      updatedAt
-      node_locale
-      content {
-        childMarkdownRemark {
-          html
+  query BlogPostsByTag($contentfulId: String!) {
+    allContentfulBlogPost(
+      filter: {
+        metadata: {
+          tags: { elemMatch: { contentful_id: { eq: $contentfulId } } }
         }
+      }
+    ) {
+      nodes {
+        id
+        title
+        slug
+        createdAt
+        updatedAt
+        node_locale
+        summary
       }
     }
   }
 `;
 
 export const Head: HeadFC = ({ data }) => {
-  const post = data.contentfulBlogPost;
+  // const post = data.contentfulBlogPost;
 
   return (
     <SEO>
       <html lang="pt-br" />
-      <title>{post.title} - Blog - Rodrigo Saling</title>
+      <title>{data.name} - Blog - Rodrigo Saling</title>
       <meta
         name="description"
         content="Rodrigo é um Senior Software Engineer que mora em Porto Alegre, Brasil."
