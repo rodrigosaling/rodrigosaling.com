@@ -1,15 +1,13 @@
+import * as React from 'react';
+import { type HeadFC, type PageProps } from 'gatsby';
 import '../styles/index.css';
 import SEO from '../templates/seo';
 import Template from '../templates/template';
-import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
-import * as React from 'react';
 
 const IndexPage: React.FC<PageProps> = () => (
   <Template>
     <p>
-      Building web stuff
-      <br />
-      one{' '}
+      Building web stuff one{' '}
       <code>
         <span>console</span>.<span>log</span>()
       </code>{' '}

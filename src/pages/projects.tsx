@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { graphql, useStaticQuery, type HeadFC, type PageProps } from 'gatsby';
-import Template from '../templates/template';
+import { type HeadFC, type PageProps } from 'gatsby';
 import { HeadingOne } from '../components/heading-one';
 import { HeadingTwo } from '../components/heading-two';
 import SEO from '../templates/seo';
+import Template from '../templates/template';
 
 const ProjectsPage: React.FC<PageProps> = () => {
   return (
@@ -51,4 +51,8 @@ const ProjectsPage: React.FC<PageProps> = () => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <SEO><title>Projects - Rodrigo Saling</title></SEO>;
+export const Head: HeadFC = () => (
+  <SEO>
+    <title>Projects - Rodrigo Saling</title>
+  </SEO>
+);

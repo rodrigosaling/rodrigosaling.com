@@ -1,10 +1,10 @@
+import * as React from 'react';
+import { HeadFC, PageProps, graphql, useStaticQuery } from 'gatsby';
 import { HeadingOne } from '../components/heading-one';
 import { HeadingTwo } from '../components/heading-two';
 import Link from '../components/link';
 import SEO from '../templates/seo';
 import Template from '../templates/template';
-import { HeadFC, PageProps, graphql, useStaticQuery } from 'gatsby';
-import * as React from 'react';
 
 const BlogPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`

@@ -1,7 +1,7 @@
-import { useLocation } from '@reach/router';
+import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import { Link } from 'gatsby';
-import * as React from 'react';
+import { useLocation } from '@reach/router';
 
 export default function Header(): React.FC<PageProps> {
   const location = useLocation();

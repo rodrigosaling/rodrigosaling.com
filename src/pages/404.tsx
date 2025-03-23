@@ -7,15 +7,10 @@ const NotFoundPage: React.FC<PageProps> = () => {
     <div>
       <main>
         <h1>404</h1>
+        <p>The page you tried to access does not exist.</p>
         <p>
-          The page you tried to access does not exist.
-        </p>
-        <p>
-          Maybe you should go back to{' '}
-          <Link to="/">
-            Home
-          </Link>{' '}
-          and start from there.
+          Maybe you should go back to <Link to="/">Home</Link> and start from
+          there.
         </p>
       </main>
     </div>
@@ -24,4 +19,8 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <SEO><title>404 - Rodrigo Saling</title></SEO>;
+export const Head: HeadFC = () => (
+  <SEO>
+    <title>404 - Rodrigo Saling</title>
+  </SEO>
+);

@@ -1,9 +1,9 @@
+import React from 'react';
+import { graphql, HeadFC, Link } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 import { HeadingOne } from '../components/heading-one';
 import SEO from './seo';
 import Template from './template';
-import { MDXProvider } from '@mdx-js/react';
-import { graphql, HeadFC, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
 
 const shortcodes = { Link }; // Provide common components here
 

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-
 import Icon from '../images/favicon-r.svg';
 
 type SEOProps = {
@@ -8,7 +7,7 @@ type SEOProps = {
 };
 
 export default function SEO({ children }: SEOProps): React.JSX.Element {
-  const {site: gatsbyConfig} = useStaticQuery(graphql`
+  const { site: gatsbyConfig } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
