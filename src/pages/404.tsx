@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, HeadFC, PageProps, useStaticQuery, graphql } from 'gatsby';
+import { Link, HeadFC, PageProps } from 'gatsby';
 import SEO from '../templates/seo';
 
 const NotFoundPage: React.FC<PageProps> = () => {
@@ -24,16 +24,4 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => {
-  const {site: gatsbyConfig} = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
-  return <SEO><title>404 - {gatsbyConfig.siteMetadata.title}</title></SEO>;
-};
+export const Head: HeadFC = () => <SEO><title>404 - Rodrigo Saling</title></SEO>;

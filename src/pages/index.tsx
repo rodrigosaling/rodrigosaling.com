@@ -30,24 +30,13 @@ const IndexPage: React.FC<PageProps> = () => (
 
 export default IndexPage;
 
-export const Head: HeadFC = () => {
-  const { site: gatsbyConfig } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-  return (
-    <SEO>
-      <html lang="en" />
-      <title>{gatsbyConfig.site.siteMetadata.title}</title>
-      <meta
-        name="description"
-        content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
-      />
-    </SEO>
-  );
-};
+export const Head: HeadFC = () => (
+  <SEO>
+    <html lang="en" />
+    <title>Rodrigo Saling</title>
+    <meta
+      name="description"
+      content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
+    />
+  </SEO>
+);

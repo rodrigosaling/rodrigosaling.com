@@ -16,16 +16,4 @@ const AboutMePage: React.FC<PageProps> = () => {
 
 export default AboutMePage;
 
-export const Head: HeadFC = () => {
-  const {site: gatsbyConfig} = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-  
-  return <SEO><title>About me - {gatsbyConfig.siteMetadata.title}</title></SEO>;
-};
+export const Head: HeadFC = () => <SEO><title>About me - Rodrigo Saling</title></SEO>;

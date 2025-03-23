@@ -79,15 +79,13 @@ const BlogPage: React.FC<PageProps> = () => {
 
 export default BlogPage;
 
-export const Head: HeadFC = () => {
-  return (
-    <SEO>
-      <html lang="pt-br" />
-      <title>Blog - Rodrigo Saling</title>
-      <meta
-        name="description"
-        content="Rodrigo é um Senior Software Engineer que mora em Porto Alegre, Brasil."
-      />
-    </SEO>
-  );
-};
+export const Head: HeadFC = () => (
+  <SEO>
+    <html lang="pt-br" />
+    <title>Blog - Rodrigo Saling</title>
+    <meta
+      name="description"
+      content="Rodrigo é um Senior Software Engineer que mora em Porto Alegre, Brasil."
+    />
+  </SEO>
+);

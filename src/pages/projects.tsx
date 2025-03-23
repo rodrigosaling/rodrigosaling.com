@@ -51,16 +51,4 @@ const ProjectsPage: React.FC<PageProps> = () => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => {
-  const {site: gatsbyConfig} = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
-  return <SEO><title>Projects - {gatsbyConfig.site.siteMetadata.title}</title></SEO>;
-};
+export const Head: HeadFC = () => <SEO><title>Projects - Rodrigo Saling</title></SEO>;

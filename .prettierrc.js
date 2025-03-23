@@ -1,6 +1,9 @@
-{
+export default {
   "singleQuote": true,
   "trailingComma": "all",
-  "tabWidth": 2,
+  'tabWidth': 2,
   "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }
+
+
+
