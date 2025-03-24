@@ -14,7 +14,7 @@ export default function BlogPost({ data, children }) {
   return (
     <Template>
       <HeadingOne>{post.frontmatter.title}</HeadingOne>
-      <p>
+      <p style={{ fontStyle: 'italic', marginBottom: '1rem' }}>
         Publicado em{' '}
         <time dateTime={publishedDate.toUTCString()}>
           {publishedDate.toLocaleDateString('pt-br', {
@@ -26,11 +26,12 @@ export default function BlogPost({ data, children }) {
         </time>
         .
       </p>
+
       <MDXProvider components={shortcodes}>{children}</MDXProvider>
 
-      <div>
+      <p style={{ marginTop: '2rem' }}>
         <Link to="/blog">Voltar para o Blog</Link>
-      </div>
+      </p>
     </Template>
   );
 }

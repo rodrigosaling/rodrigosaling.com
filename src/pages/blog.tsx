@@ -49,7 +49,7 @@ const BlogPage: React.FC<PageProps> = () => {
         const publishedDate = new Date(node.childMdx.frontmatter.publishedAt);
 
         return (
-          <article key={node.childMdx.id}>
+          <article key={node.childMdx.id} style={{ marginTop: '2rem' }}>
             <HeadingTwo>
               <Link to={`${node.childMdx.fields.slug}`}>
                 {node.childMdx.frontmatter.title}
@@ -65,7 +65,14 @@ const BlogPage: React.FC<PageProps> = () => {
               })}
             </time>
 
-            <ul>
+            <ul
+              style={{
+                listStyle: 'none',
+                display: 'flex',
+                gap: '1rem',
+                padding: 0,
+              }}
+            >
               {node.childMdx.frontmatter.tags.map((tag: string) => (
                 <li key={tag}>{tag}</li>
               ))}

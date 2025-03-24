@@ -10,12 +10,12 @@ const ProjectsPage: React.FC<PageProps> = () => {
     <Template>
       <HeadingOne>Projects</HeadingOne>
 
-      <p>
+      <p style={{ marginBottom: '2rem' }}>
         A list of personal/side/pet projects that are at different levels of
         development.
       </p>
 
-      <article>
+      <article style={{ marginBottom: '2rem' }}>
         <HeadingTwo>
           <a href="https://gerador-senhas.rodrigosaling.com/">
             Gerador de Senhas (Password Generator)
