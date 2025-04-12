@@ -90,7 +90,7 @@ h6 {
 
 html {
   padding: var(--padding2);
-  background-color: #fffdf9;
+  background-color: #fdfefb;
 }
 
 body {
@@ -103,20 +103,26 @@ body {
 }
 
 a {
-  color: #669bbc;
+  color: #5745aa;
+  text-underline-offset: 2px;
+}
+
+/* https://frontendmasters.com/blog/chilled-out-text-underlines/ */
+a:not(:is(:hover, :focus)) {
+  text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
 }
 
 a:visited {
-  color: #780000;
+  color: #3d11ce;
 }
 
 a:hover {
-  color: #c1121f;
-  text-decoration: none;
+  color: #67107d;
+  /* text-decoration: none; */
 }
 
 a:active {
-  color: #c1121f;
+  color: #67107d;
 }
 
 p + p {

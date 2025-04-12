@@ -1,17 +1,23 @@
-import styled from 'styled-components';
 import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import { Link } from 'gatsby';
 import { useLocation } from '@reach/router';
 
-const Flex = styled.div<{
+const Flex = ({
+  justifyContent = 'space-between',
+  alignItems = 'center',
+  children,
+}: {
   justifyContent?: string;
   alignItems?: string;
-}>((props) => ({
-  display: 'flex',
-  justifyContent: props.justifyContent || 'space-between',
-  alignItems: props.alignItems || 'center',
-}));
+  children: React.ReactNode;
+}) => {
+  return (
+    <div style={{ display: 'flex', justifyContent, alignItems }}>
+      {children}
+    </div>
+  );
+};
 
 export default function Header(): React.FC<PageProps> {
   const location = useLocation();
