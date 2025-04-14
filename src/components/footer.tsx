@@ -5,7 +5,14 @@ export default function Footer() {
 
   if (isBlog) {
     return (
-      <footer style={{ marginTop: '2rem' }}>
+      <footer
+        style={{
+          marginTop: '2rem',
+          borderTop: '1px solid #ddd',
+          paddingTop: '1rem',
+          fontSize: '0.8rem',
+        }}
+      >
         <p>
           Também estou aqui:{' '}
           <a href="https://github.com/rodrigosaling">GitHub</a> e{' '}
@@ -16,7 +23,14 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ marginTop: '2rem' }}>
+    <footer
+      style={{
+        marginTop: '2rem',
+        borderTop: '1px solid #ddd',
+        paddingTop: '1rem',
+        fontSize: '0.8rem',
+      }}
+    >
       <p>
         Find me on these other places:{' '}
         <a href="https://github.com/rodrigosaling">GitHub</a> and{' '}

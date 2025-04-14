@@ -28,13 +28,4 @@ const IndexPage: React.FC<PageProps> = () => (
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-  <SEO>
-    <html lang="en" />
-    <title>Rodrigo Saling</title>
-    <meta
-      name="description"
-      content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
-    />
-  </SEO>
-);
+export const Head: HeadFC = () => <SEO />;

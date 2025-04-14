@@ -21,6 +21,6 @@ export default NotFoundPage;
 
 export const Head: HeadFC = () => (
   <SEO>
-    <title>404 - Rodrigo Saling</title>
+    <title id="title">404 - Rodrigo Saling</title>
   </SEO>
 );

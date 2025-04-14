@@ -8,30 +8,16 @@ import Template from '../templates/template';
 
 const BlogPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: {
-          sourceInstanceName: { eq: "blog" }
-          childrenMdx: {
-            elemMatch: { frontmatter: { isPublished: { eq: true } } }
-          }
-        }
-        sort: { childrenMdx: { frontmatter: { publishedAt: DESC } } }
-      ) {
-        totalCount
+    query posts {
+      allContentfulBlogPost(filter: { node_locale: { eq: "pt-BR" } }) {
         nodes {
-          childMdx {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              publishedAt
-              summary
-              tags
-            }
-          }
+          id
+          title
+          slug
+          node_locale
+          summary
+          createdAt
+          updatedAt
         }
       }
     }
@@ -41,42 +27,38 @@ const BlogPage: React.FC<PageProps> = () => {
     <Template>
       <HeadingOne>Blog</HeadingOne>
 
-      <p>Todo o conteúdo do blog está escrito em português brasileiro.</p>
+      <p style={{ marginBottom: '2rem' }}>
+        Todo o conteúdo do blog está escrito em português brasileiro.
+      </p>
 
-      {!data.allFile.nodes.length && <p>Nada aqui ainda.</p>}
+      {!data.allContentfulBlogPost.nodes.length && <p>Nada aqui ainda.</p>}
 
-      {data.allFile.nodes.map((node) => {
-        const publishedDate = new Date(node.childMdx.frontmatter.publishedAt);
+      {data.allContentfulBlogPost.nodes.map((node) => {
+        const publishedDate = new Date(node.createdAt);
 
         return (
-          <article key={node.childMdx.id} style={{ marginTop: '2rem' }}>
+          <article key={node.id} style={{ marginBottom: '3rem' }}>
             <HeadingTwo>
-              <Link to={`${node.childMdx.fields.slug}`}>
-                {node.childMdx.frontmatter.title}
-              </Link>
+              <Link to={`${node.slug}`}>{node.title}</Link>
             </HeadingTwo>
 
-            <time dateTime={publishedDate.toUTCString()}>
+            <time
+              dateTime={publishedDate.toUTCString()}
+              style={{
+                display: 'block',
+                fontSize: '0.8rem',
+                marginBottom: '1rem',
+              }}
+            >
               {publishedDate.toLocaleDateString('pt-br', {
                 day: '2-digit',
-                month: 'short',
+                month: 'long',
                 year: 'numeric',
                 timeZone: 'UTC',
               })}
             </time>
 
-            <ul
-              style={{
-                listStyle: 'none',
-                display: 'flex',
-                gap: '1rem',
-                padding: 0,
-              }}
-            >
-              {node.childMdx.frontmatter.tags.map((tag: string) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
+            <p>{node.summary}</p>
           </article>
         );
       })}
@@ -88,9 +70,10 @@ export default BlogPage;
 
 export const Head: HeadFC = () => (
   <SEO>
-    <html lang="pt-br" />
-    <title>Blog - Rodrigo Saling</title>
+    <html id="html" lang="pt-br" />
+    <title id="title">Blog - Rodrigo Saling</title>
     <meta
+      id="description"
       name="description"
       content="Rodrigo é um Senior Software Engineer que mora em Porto Alegre, Brasil."
     />

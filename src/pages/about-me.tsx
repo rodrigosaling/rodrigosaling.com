@@ -18,6 +18,6 @@ export default AboutMePage;
 
 export const Head: HeadFC = () => (
   <SEO>
-    <title>About me - Rodrigo Saling</title>
+    <title id="title">About me - Rodrigo Saling</title>
   </SEO>
 );

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Icon from '../images/favicon-r.svg';
 
 type SEOProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export default function SEO({ children }: SEOProps): React.JSX.Element {
@@ -12,6 +12,7 @@ export default function SEO({ children }: SEOProps): React.JSX.Element {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -19,13 +20,14 @@ export default function SEO({ children }: SEOProps): React.JSX.Element {
 
   return (
     <>
-      <html lang="en" />
-      <title>{gatsbyConfig.siteMetadata.title}</title>
+      <html lang="en" id="html" />
+      <title id="title">{gatsbyConfig.siteMetadata.title}</title>
       <meta
+        id="description"
         name="description"
-        content="Rodrigo is a Senior Software Engineer living in Porto Alegre, Brazil."
+        content={gatsbyConfig.siteMetadata.description}
       />
-      <link rel="icon" type="image/svg" href={Icon} />
+      <link id="favicon" rel="icon" type="image/svg" href={Icon} />
       {children}
     </>
   );

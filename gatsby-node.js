@@ -28,38 +28,71 @@ exports.onCreateNode = ({ node, actions: { createNodeField } }) => {
 
 // https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/
 exports.createPages = async function ({ actions, graphql }) {
+  const { createPage } = actions;
   const postTemplate = path.resolve('./src/templates/blog-post.tsx');
 
   const { data } = await graphql(`
-    query {
-      allFile(
-        filter: {
-          sourceInstanceName: { eq: "blog" }
-          childrenMdx: {
-            elemMatch: { frontmatter: { isPublished: { eq: true } } }
-          }
-        }
-      ) {
+    query posts {
+      allContentfulBlogPost(filter: { node_locale: { eq: "pt-BR" } }) {
         nodes {
-          childMdx {
-            fields {
-              slug
-            }
-            internal {
-              contentFilePath
+          id
+          title
+          slug
+          node_locale
+          summary
+          createdAt
+          updatedAt
+          content {
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
     }
   `);
-  data.allFile.nodes.forEach((node) => {
-    const { slug } = node.childMdx.fields;
-    actions.createPage({
-      path: `blog/${slug}`,
-      // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#layouts
-      component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
-      context: { slug },
+
+  data.allContentfulBlogPost.nodes.forEach((node) => {
+    createPage({
+      path: `/blog/${node.slug}`,
+      component: postTemplate,
+      context: {
+        slug: node.slug,
+        content: node.content.childMarkdownRemark.html,
+      },
     });
   });
+
+  // const { data } = await graphql(`
+  //   query {
+  //     allFile(
+  //       filter: {
+  //         sourceInstanceName: { eq: "blog" }
+  //         childrenMdx: {
+  //           elemMatch: { frontmatter: { isPublished: { eq: true } } }
+  //         }
+  //       }
+  //     ) {
+  //       nodes {
+  //         childMdx {
+  //           fields {
+  //             slug
+  //           }
+  //           internal {
+  //             contentFilePath
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  // data.allFile.nodes.forEach((node) => {
+  //   const { slug } = node.childMdx.fields;
+  //   actions.createPage({
+  //     path: `blog/${slug}`,
+  //     // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#layouts
+  //     component: `${postTemplate}?__contentFilePath=${node.childMdx.internal.contentFilePath}`,
+  //     context: { slug },
+  //   });
+  // });
 };
