@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { useLocation } from '@reach/router';
 
 export default function Footer() {
-  const isBlog = window.location.pathname.includes('/blog/');
+  const location = useLocation();
+  const isBlog = location.pathname.includes('/blog/');
 
   if (isBlog) {
     return (
