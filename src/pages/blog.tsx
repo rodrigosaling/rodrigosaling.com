@@ -9,7 +9,10 @@ import Template from '../templates/template';
 const BlogPage: React.FC<PageProps> = () => {
   const data = useStaticQuery(graphql`
     query posts {
-      allContentfulBlogPost(filter: { node_locale: { eq: "pt-BR" } }) {
+      allContentfulBlogPost(
+        filter: { node_locale: { eq: "pt-BR" } }
+        sort: { createdAt: DESC }
+      ) {
         nodes {
           id
           title
