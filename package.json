@@ -7,9 +7,6 @@
   "keywords": [
     "gatsby"
   ],
-  "engines": {
-    "pnpm": "^10.9.0"
-  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
